@@ -1,0 +1,320 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- ------------ customs css------ -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+
+    <title>Hello, world!</title>
+    <style>
+    #draggable { 
+      width: 150px;
+      height: 150px;
+      padding: 0.5em;
+      border:1px solid black;
+
+       }
+       .draggable { 
+        width: 90px;
+         height: 80px; 
+         padding: 5px; 
+         float: left; margin: 0 10px 10px 0; 
+         font-size: .9em; }
+        .ui-widget-header p, .ui-widget-content p { margin: 0; }
+        #snaptarget {
+         height: 140px; 
+       }
+       #draggable,#draggable11#draggable2,#draggable4,#draggable5,{
+        border:1px solid black;
+       }
+        
+
+        #resizable { width: 150px; height: 150px; padding: 0.5em; }
+          #resizable h3 { text-align: center; margin: 0; }
+
+
+          #resizable { width: 150px; height: 150px; padding: 0.5em; }
+  #resizable h3 { text-align: center; margin: 0; }
+  .ui-resizable-helper { border: 1px dotted gray; }
+
+
+  /*555555555555555555*/
+  #resizable { width: 150px; height: 150px; padding: 0.5em; }
+  #resizable h3 { text-align: center; margin: 0; }
+  .ui-resizable-helper { border: 1px dotted gray; }
+
+
+  /*66666666666666666*/
+  #feedback { font-size: 1.4em; }
+  #selectable .ui-selecting { background: #FECA40; }
+  #selectable .ui-selected { background: #F39814; color: white; }
+  #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+  /*777777777777777*/
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 450px; }
+  #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
+
+
+  /*8888888888888888888888*/
+  .shape {
+      margin-left: 4em;
+      margin-top: 2.5em;
+      height: 8em;
+      width: 8em;
+      box-shadow: 4px 4px 8px;
+      color: #ccc;
+      background-repeat: no-repeat;
+      background-size: 90%;
+      background-position: 50%;
+    }
+    .circle, .pill {
+      border-radius: 8em;
+    }
+    .pill, .rectangle {
+      width: 16em;
+    }
+    .square, .circle {
+      margin-left: 9em;
+    }
+    .border {
+      border: 2px solid #333333;
+    }
+    .toggles {
+      width: 200px;
+    }
+    .toggle-wrap, .shape {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .controls {
+      background: #ccc;
+      padding: 1em;
+      display: inline-block;
+    }
+        </style>
+
+  </head>
+  <body>
+
+    
+   <div class="container ">
+     <div class="row text-center">
+       <div class="col-md-12 ">
+         <div class="all-contents">
+           <div id="draggable" class="ui-widget-content">
+      <p>Drag me around</p>
+    </div>
+
+
+ 
+<br style="clear:both">
+ 
+<div id="draggable11" class="draggable ui-widget-content">
+  <p>Default (snap: true), snaps to all other draggable elements</p>
+</div>
+ 
+<div id="draggable2" class="draggable ui-widget-content">
+  <p>I only snap to the big box</p>
+</div>
+ 
+<div id="draggable3" class="draggable ui-widget-content">
+  <p>I only snap to the outer edges of the big box</p>
+</div>
+ 
+<div id="draggable4" class="draggable ui-widget-content">
+  <p>I snap to a 20 x 20 grid</p>
+</div>
+ 
+<div id="draggable5" class="draggable ui-widget-content">
+  <p>I snap to a 80 x 80 grid</p>
+</div>
+     
+<br>
+<br>
+<br>
+<br>
+<!-- 444444444444444 -->
+<div id="resizable" class="ui-widget-content">
+  <h3 class="ui-widget-header">Animate</h3>
+</div>
+
+     <div id="resizable" class="ui-widget-content">
+  <h3 class="ui-widget-header">Resizable</h3>
+</div>
+
+<!-- 555555555555555555555 -->
+
+<div id="resizable" class="ui-widget-content">
+  <h3 class="ui-widget-header">Animate</h3>
+</div>
+
+<!-- 66666666666666666666666666 --><ol id="selectable">
+  <li class="ui-widget-content">Item 1</li>
+  <li class="ui-widget-content">Item 2</li>
+  <li class="ui-widget-content">Item 3</li>
+  <li class="ui-widget-content">Item 4</li>
+  <li class="ui-widget-content">Item 5</li>
+  <li class="ui-widget-content">Item 6</li>
+  <li class="ui-widget-content">Item 7</li>
+</ol>
+
+<!-- 77777777777777777 -->
+<ul id="sortable">
+  <li class="ui-state-default">1</li>
+  <li class="ui-state-default">2</li>
+  <li class="ui-state-default">3</li>
+  <li class="ui-state-default">4</li>
+  <li class="ui-state-default">5</li>
+  <li class="ui-state-default">6</li>
+  <li class="ui-state-default">7</li>
+  <li class="ui-state-default">8</li>
+  <li class="ui-state-default">9</li>
+  <li class="ui-state-default">10</li>
+  <li class="ui-state-default">11</li>
+  <li class="ui-state-default">12</li>
+</ul>
+<!-- 8888888888888888 -->
+<div class="controls">
+  <div class="brand-wrap">
+    <h3>1.) Select a brand</h3>
+    <div class="brand">
+      <label for="brand-jquery">jQuery</label>
+      <input type="radio" name="brand" id="brand-jquery" data-background-color="#0769AD" data-color="#7ACEF4" data-background-image="url(images/jquery.png)">
+      <label for="brand-jquery-ui">jQuery UI</label>
+      <input type="radio" name="brand" id="brand-jquery-ui" data-background-color="#B24926" data-color="#FAA523" data-background-image="url(images/jquery-ui.png)" checked>
+      <label for="brand-jquery-mobile">jQuery Mobile</label>
+      <input type="radio" name="brand" id="brand-jquery-mobile" data-background-color="#108040" data-color="#3EB249" data-background-image="url(images/jquery-mobile.png)">
+      <label for="brand-sizzle">Sizzle</label>
+      <input type="radio" name="brand" id="brand-sizzle" data-background-color="#9A1B1E" data-color="#FAA523" data-background-image="url(images/sizzle.png)">
+      <label for="brand-qunit">QUnit</label>
+      <input type="radio" name="brand" id="brand-qunit" data-background-color="#390F39" data-color="#9C3493" data-background-image="url(images/qunit.png)">
+    </div>
+  </div>
+  <div class="shape-wrap">
+    <h3>2.) Select a shape</h3>
+    <div class="shape-bar">
+      <label for="shape-circle">Circle</label>
+      <input type="radio" name="shape" id="shape-circle" value="circle" checked>
+      <label for="shape-square">Square</label>
+      <input type="radio" name="shape" id="shape-square" value="square">
+      <label for="shape-pill">Pill</label>
+      <input type="radio" name="shape" id="shape-pill" value="pill">
+      <label for="shape-rectangle">Rectangle</label>
+      <input type="radio" name="shape" id="shape-rectangle" value="rectangle">
+    </div>
+  </div>
+  <div class="toggle-wrap">
+    <h3>3.) Customize</h3>
+    <div class="toggles">
+      <label for="color">Shadow</label>
+      <input class="toggle brand-toggle" type="checkbox" name="color" id="color">
+      <label for="border">Border</label>
+      <input class="toggle" type="checkbox" name="border" id="border">
+      <label for="background-color">Background</label>
+      <input class="toggle brand-toggle" type="checkbox" name="background-color" id="background-color" checked>
+      <label for="background-image">Background Image</label>
+      <input class="toggle brand-toggle" type="checkbox" name="background-image" id="background-image" checked>
+    </div>
+  </div>
+  <div class="shape circle background jquery-ui"></div>
+</div>
+<!-- 99999999999999999999999 -->
+
+
+
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+    <!-- jQuery links -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+<script>
+  $( function() {
+    $( "#draggable" ).draggable();
+
+       $( "#draggable11" ).draggable({ snap: true });
+    $( "#draggable2" ).draggable({ snap: ".ui-widget-header" });
+    $( "#draggable3" ).draggable({ snap: ".ui-widget-header", snapMode: "outer" });
+    $( "#draggable4" ).draggable({ grid: [ 20, 20 ] });
+    $( "#draggable5" ).draggable({ grid: [ 80, 80 ] });
+
+
+    $( "#resizable" ).resizable();
+
+
+    $( "#resizable" ).resizable({
+      animate: true
+    });
+    // 55555555555555
+    $( "#resizable" ).resizable({
+      animate: true
+    });
+    // 6666666666666666
+    $( "#selectable" ).selectable();
+    // 7777777777777777
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+    // 888888888888888888
+    function handleShape( e ) {
+      $( ".shape" )
+        .removeClass( "circle pill square rectangle" )
+        .addClass( $( e.target ).val() );
+    };
+    function handleToggle( e ) {
+      var target = $( e.target );
+ 
+      if ( target.is( ".brand-toggle" ) ) {
+        var checked = target.is( ":checked" ),
+          value = $( "[name='brand']" )
+            .filter( ":checked" )
+            .attr( "data-" + target[ 0 ].id )
+        $( ".shape" ).css( target[ 0 ].id, checked ? value : "" );
+      } else {
+        $( ".shape" ).toggleClass( target[ 0 ].id, target.is( ":checked") );
+      }
+    }
+    function updateBrand() {
+      handleShape( { target: $( "[name='shape']:checked" ) } );
+      $( ".toggle:checked" ).each( function() {
+        handleToggle( { target: $( this ) } );
+      } );
+    }
+ 
+    // Initalize widgets
+    $( "input" ).checkboxradio();
+    $( ".shape-bar, .brand" ).controlgroup();
+    $( ".toggles" ).controlgroup( {
+      direction: "vertical"
+    } );
+ 
+    // Bind event handlers
+    $( "[name='shape']").on( "change", handleShape );
+    $( ".toggle" ).on( "change", handleToggle );
+    $( "[name='brand']").on( "change", updateBrand );
+ 
+    // Set initial values
+    updateBrand();
+
+
+    // 9999999999999999999999999
+  } );
+  </script>
+    
+
+  </body>
+</html>
